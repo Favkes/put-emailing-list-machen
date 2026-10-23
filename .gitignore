@@ -1,0 +1,11 @@
+.env
+.venv/
+plan.html
+cookies.json
+__pycache__/
+
+.idea/
+*.pyc
+*.csv
+login.html
+login-result.html
