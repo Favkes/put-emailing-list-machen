@@ -23,7 +23,7 @@ Create a virtual environment:
 python -m venv .venv
 ```
 
-Activate it:
+Activate it.
 
 Linux/macOS:
 
@@ -50,16 +50,30 @@ Create a `.env` file in the project directory:
 ```env
 PUT_USERNAME=your.name@student.put.poznan.pl
 PUT_PASSWORD=your_password
+SEMESTER_CODE=your_semester_tag
 ```
 
 Do not commit the `.env` file.
 
 ## Usage
 
-Run the scraper:
+Run:
 
 ```bash
-python main.py
+python download_timetable.py
 ```
 
-The script logs into PUT USOSweb, reads timetable entries, extracts lecturer data, and generates a CSV file for contact import.
+The script will:
+
+- log into PUT USOSweb,
+- download the timetable,
+- extract subjects, class types and lecturer profile URLs,
+- download lecturer details,
+- extract lecturer titles and email addresses,
+- generate a CSV contact list.
+
+`parse_timetable.py` contains helper functions used to parse timetable and lecturer HTML pages. It can also be run separately for debugging or inspecting parsed timetable data.
+
+## Output
+
+The generated CSV file can be imported into a compatible contact manager, such as Zimbra.
